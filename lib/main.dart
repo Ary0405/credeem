@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loyalty_app/screens/logged_in_screen.dart';
+import 'package:loyalty_app/screens/settings_screen.dart';
 // import 'package:loyalty_app/screens/login_screen.dart';
 
 void main() {
@@ -16,11 +17,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Loyalty App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSwatch()
-            .copyWith(primary: const Color(0xFF151517)),
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(primary: const Color(0xFF151517)),
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       home: const LoggedInScreen(),
+      routes: {
+        '/settings': (context) => const SettingsScreen(),
+      },
     );
   }
 }

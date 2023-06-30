@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../data/stores_data.dart';
 import '../widgets/store_overview.dart';
 
@@ -24,14 +23,19 @@ class StoreScreen extends StatelessWidget {
                   'assets/logo.png',
                 ),
                 // rounded image
-                Container(
-                  height: 42,
-                  width: 42,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          "https://avatars.githubusercontent.com/u/41837037?v=4"),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/settings');
+                  },
+                  child: Container(
+                    height: 42,
+                    width: 42,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: NetworkImage(
+                            "https://avatars.githubusercontent.com/u/41837037?v=4"),
+                      ),
                     ),
                   ),
                 ),
