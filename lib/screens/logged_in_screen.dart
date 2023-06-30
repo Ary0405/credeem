@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loyalty_app/screens/history_screen.dart';
 import 'package:loyalty_app/screens/login_screen.dart';
 import 'package:loyalty_app/screens/store_screen.dart';
 
@@ -15,7 +16,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
   int _selectedIndex = 0;
   final List<Widget> screens = [
     const StoreScreen(),
-    const LoginScreen(),
+    const HistoryScreen(),
     const LoginScreen(),
     const LoginScreen(),
   ];
