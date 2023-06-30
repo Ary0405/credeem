@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loyalty_app/screens/logged_in_screen.dart';
 import 'package:loyalty_app/screens/settings_screen.dart';
+import 'package:loyalty_app/screens/store_details_screen.dart';
 // import 'package:loyalty_app/screens/login_screen.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       home: const LoggedInScreen(),
       routes: {
         '/settings': (context) => const SettingsScreen(),
+        '/store_details': (context) => const StoreDetailsScreen(),
       },
     );
   }
