@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loyalty_app/screens/login_screen.dart';
+import 'package:loyalty_app/screens/store_screen.dart';
 
 import '../custom_icons.dart';
 
@@ -13,7 +14,7 @@ class LoggedInScreen extends StatefulWidget {
 class _LoggedInScreenState extends State<LoggedInScreen> {
   int _selectedIndex = 0;
   final List<Widget> screens = [
-    const LoginScreen(),
+    const StoreScreen(),
     const LoginScreen(),
     const LoginScreen(),
     const LoginScreen(),
@@ -25,14 +26,15 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
           false, // to keep the size, when opening the keyboard
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xFF181818),
+        showSelectedLabels: false,
+        backgroundColor: const Color(0xFF151517),
         currentIndex: _selectedIndex,
         onTap: (index) {
           setState(() {
             _selectedIndex = index;
           });
         },
-        selectedItemColor:  const Color(0xFFE0E063),
+        selectedItemColor: const Color(0xFFE0E063),
         unselectedItemColor: const Color(0xFF838383),
         iconSize: 36,
         type: BottomNavigationBarType.fixed,

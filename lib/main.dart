@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Loyalty App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch()
-            .copyWith(primary: const Color.fromRGBO(113, 99, 186, 1)),
+            .copyWith(primary: const Color(0xFF151517)),
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       home: const LoggedInScreen(),
