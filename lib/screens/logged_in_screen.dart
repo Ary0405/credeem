@@ -18,7 +18,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
   int _selectedIndex = 0;
   final List<Widget> screens = [
     const StoreScreenTemp(),
-    const HistoryScreen(),
+    const Historyscreen(),
     const SwapScreen(),
     const SettingsScreen(),
   ];
