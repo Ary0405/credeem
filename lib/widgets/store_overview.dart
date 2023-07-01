@@ -76,21 +76,20 @@ class StoreOverviewCard extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
+                Container(
+                  margin: const EdgeInsets.only(right: 8),
+                  child: Text(
+                    points.toString(),
+                    style: const TextStyle(
+                      color: Color(0xffA3DDC9),
+                      fontSize: 14,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
               ],
             ),
-            Positioned(
-              right: 0,
-              top: 0,
-              child: Text(
-                points.toString(),
-                style: const TextStyle(
-                  color: Color(0xFFE0E063),
-                  fontSize: 14,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            )
           ],
         ),
       ),

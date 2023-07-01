@@ -27,6 +27,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
       resizeToAvoidBottomInset:
           false, // to keep the size, when opening the keyboard
       body: screens[_selectedIndex],
+      backgroundColor: const Color(0xff0D1127),
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         backgroundColor: const Color(0xFF151517),
