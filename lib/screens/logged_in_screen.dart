@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loyalty_app/screens/history_screen.dart';
 import 'package:loyalty_app/screens/login_screen.dart';
-import 'package:loyalty_app/screens/store_screen.dart';
+import 'package:loyalty_app/screens/settings_screen.dart';
+import 'package:loyalty_app/screens/store_screen_temp.dart';
 import 'package:loyalty_app/screens/swap_screen.dart';
 
 import '../custom_icons.dart';
@@ -16,10 +17,10 @@ class LoggedInScreen extends StatefulWidget {
 class _LoggedInScreenState extends State<LoggedInScreen> {
   int _selectedIndex = 0;
   final List<Widget> screens = [
-    const StoreScreen(),
-    const Historyscreen(),
+    const StoreScreenTemp(),
+    const HistoryScreen(),
     const SwapScreen(),
-    const LoginScreen(),
+    const SettingsScreen(),
   ];
   @override
   Widget build(BuildContext context) {
