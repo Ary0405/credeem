@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:loyalty_app/screens/logged_in_screen.dart';
 import 'package:loyalty_app/screens/login_screen.dart';
 import 'package:loyalty_app/screens/onboarding_screen.dart';
+import 'package:loyalty_app/screens/otp_screen.dart';
 import 'package:loyalty_app/screens/select_store_screen.dart';
 import 'package:loyalty_app/screens/settings_screen.dart';
 import 'package:loyalty_app/screens/store_details_screen.dart';
@@ -35,6 +36,8 @@ class MyApp extends StatelessWidget {
         '/success': (context) => const SuccessScreen(),
         '/waiting' :(context) => const WaitingScreen(),
         '/login' :(context) => const LoginScreen(),
+        '/otp' :(context) => const OtpScreen(),
+        '/logged_in' :(context) => const LoggedInScreen(),
       },
     );
   }
