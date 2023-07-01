@@ -329,9 +329,9 @@ class _SwapScreenState extends State<SwapScreen> {
                             color: const Color.fromRGBO(242, 242, 242, 1),
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               SizedBox(width: 10),
                               Icon(
                                 Icons.store,
