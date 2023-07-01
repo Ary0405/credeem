@@ -1,15 +1,18 @@
-import '../custom_icons.dart';
-
 import 'package:flutter/material.dart';
+import 'package:loyalty_app/screens/store_screen.dart';
+import '../data/stores_data.dart';
+import '../widgets/store_overview.dart';
+import 'package:loyalty_app/custom_icons.dart';
 
-class HistoryScreen extends StatelessWidget {
-  const HistoryScreen({super.key});
+class Historyscreen extends StatelessWidget {
+  const Historyscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
+        child: Container(
+          color: const Color(0xFF0D1325),
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -26,7 +29,7 @@ class HistoryScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(113, 99, 186, 1),
+                        color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                     ),
                     Text(
@@ -34,7 +37,7 @@ class HistoryScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
-                        color: Color.fromRGBO(0, 0, 0, 0.5),
+                        color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                     ),
                   ],
@@ -59,7 +62,7 @@ class HistoryScreen extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                              color: Color.fromRGBO(0, 0, 0, 0.5),
+                              color: Color(0xFFA3DDC9),
                             ),
                           ),
                           const SizedBox(height: 10),
@@ -206,9 +209,18 @@ class PassbookEntryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
+      
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(242, 242, 242, 1),
+        color: const Color(0xFF1A2545),
         borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFA3DDC9).withOpacity(0.12),
+            spreadRadius: 0,
+            blurRadius: 33,
+            offset: const Offset(0, 0), // changes position of shadow
+          ),
+        ],
       ),
       child: Stack(
         children: [
@@ -216,11 +228,11 @@ class PassbookEntryCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 70,
-                width: 70,
+                height: 60,
+                width: 60,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(50),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
@@ -240,7 +252,7 @@ class PassbookEntryCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(0, 0, 0, 1),
+                        color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                     ),
                     Row(
@@ -248,7 +260,7 @@ class PassbookEntryCard extends StatelessWidget {
                         swappedWith != null
                             ? const Icon(
                                 CustomIcons.swap,
-                                color: Color.fromRGBO(0, 0, 0, 0.5),
+                                color: Color(0xFFA3DDC9),
                               )
                             : const SizedBox(),
                         SizedBox(
@@ -259,7 +271,7 @@ class PassbookEntryCard extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(0, 0, 0, 0.5),
+                            color: Color.fromRGBO(255, 255, 255, 0.498),
                           ),
                         ),
                       ],
@@ -313,7 +325,7 @@ class PassbookEntryCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                color: Color.fromRGBO(0, 0, 0, 0.5),
+                color: Color.fromRGBO(255, 255, 255, 0.498),
               ),
             ),
           ),
