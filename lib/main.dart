@@ -15,6 +15,14 @@ void main() {
   runApp(const MyApp());
 }
 
+class NoGlowOnScroll extends ScrollBehavior {
+  @override
+  Widget buildOverscrollIndicator(
+      BuildContext context, Widget child, ScrollableDetails details) {
+    return child;
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -28,16 +36,22 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSwatch().copyWith(primary: const Color(0xFF151517)),
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: NoGlowOnScroll(),
+          child: child ?? const SizedBox(),
+        );
+      },
       home: const OnboardingScreen(),
       routes: {
         '/settings': (context) => const SettingsScreen(),
         '/store_details': (context) => const StoreDetailsScreen(),
         '/select_store': (context) => const SelectStoreScreen(),
         '/success': (context) => const SuccessScreen(),
-        '/waiting' :(context) => const WaitingScreen(),
-        '/login' :(context) => const LoginScreen(),
-        '/otp' :(context) => const OtpScreen(),
-        '/logged_in' :(context) => const LoggedInScreen(),
+        '/waiting': (context) => const WaitingScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/otp': (context) => const OtpScreen(),
+        '/logged_in': (context) => const LoggedInScreen(),
       },
     );
   }

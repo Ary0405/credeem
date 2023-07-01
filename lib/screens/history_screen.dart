@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loyalty_app/custom_icons.dart';
+import 'package:loyalty_app/main.dart';
 
 class Historyscreen extends StatelessWidget {
   const Historyscreen({super.key});
@@ -7,6 +8,7 @@ class Historyscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0D1127),
       body: SafeArea(
         child: Container(
           color: const Color(0xFF0D1325),
@@ -16,7 +18,7 @@ class Historyscreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,9 +34,9 @@ class Historyscreen extends StatelessWidget {
                     Text(
                       "Your transactions",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w400,
-                        color: Color.fromRGBO(255, 255, 255, 1),
+                        color: Color.fromRGBO(255, 255, 255, .7),
                       ),
                     ),
                   ],
@@ -42,7 +44,7 @@ class Historyscreen extends StatelessWidget {
               ),
               Expanded(
                 child: ScrollConfiguration(
-                  behavior: const ScrollBehavior(),
+                  behavior: NoGlowOnScroll(),
                   child: ListView.builder(
                     itemCount: passbookDataGroupedByDate.length,
                     itemBuilder: (context, index) {
@@ -129,7 +131,7 @@ Map<String, List<PassbookEntry>> passbookDataGroupedByDate = {
             "https://companieslogo.com/img/orig/NKE-0c8add60.png?t=1632522146"),
     const PassbookEntry(
         title: "Nike",
-        subtitle: "Swapped with Amazon",
+        subtitle: "Amazon",
         date: "Jan 22, 2022",
         time: "1:00 pm",
         amount: 100,
@@ -139,7 +141,7 @@ Map<String, List<PassbookEntry>> passbookDataGroupedByDate = {
             "https://companieslogo.com/img/orig/NKE-0c8add60.png?t=1632522146"),
     const PassbookEntry(
         title: "Amazon",
-        subtitle: "Swapped with Nike",
+        subtitle: "Nike",
         date: "Jan 22, 2022",
         time: "1:00 pm",
         amount: 500,
@@ -161,7 +163,7 @@ Map<String, List<PassbookEntry>> passbookDataGroupedByDate = {
             "https://companieslogo.com/img/orig/NKE-0c8add60.png?t=1632522146"),
     const PassbookEntry(
         title: "Nike",
-        subtitle: "Swapped with Amazon",
+        subtitle: "Amazon",
         date: "Aug 7, 2023",
         time: "1:00 pm",
         amount: 100,
@@ -171,7 +173,7 @@ Map<String, List<PassbookEntry>> passbookDataGroupedByDate = {
             "https://companieslogo.com/img/orig/NKE-0c8add60.png?t=1632522146"),
     const PassbookEntry(
         title: "Amazon",
-        subtitle: "Swapped with Nike",
+        subtitle: "Nike",
         date: "Aug 7, 2023",
         time: "1:00 pm",
         amount: 500,
@@ -206,7 +208,6 @@ class PassbookEntryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
-      
       decoration: BoxDecoration(
         color: const Color(0xFF1A2545),
         borderRadius: BorderRadius.circular(20),
@@ -240,7 +241,7 @@ class PassbookEntryCard extends StatelessWidget {
               ),
               const SizedBox(width: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0),
+                padding: const EdgeInsets.symmetric(vertical: 6.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -252,12 +253,14 @@ class PassbookEntryCard extends StatelessWidget {
                         color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                     ),
+                    const SizedBox(height: 2),
                     Row(
                       children: [
                         swappedWith != null
                             ? const Icon(
                                 CustomIcons.swap,
                                 color: Color(0xFFA3DDC9),
+                                size: 16,
                               )
                             : const SizedBox(),
                         SizedBox(
@@ -284,8 +287,8 @@ class PassbookEntryCard extends StatelessWidget {
             top: 0,
             child: Container(
               padding: const EdgeInsets.symmetric(
-                vertical: 5,
-                horizontal: 12,
+                vertical: 4,
+                horizontal: 8,
               ),
               decoration: BoxDecoration(
                 color: type == "credit"
@@ -297,13 +300,14 @@ class PassbookEntryCard extends StatelessWidget {
                 children: [
                   Image.asset(
                     type == "credit" ? "assets/credit.png" : "assets/debit.png",
-                    height: 18,
-                    width: 18,
+                    height: 12,
+                    width: 12,
                   ),
+                  const SizedBox(width: 4),
                   Text(
                     amount.toString(),
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: type == "credit"
                           ? const Color.fromRGBO(55, 180, 85, 1)
