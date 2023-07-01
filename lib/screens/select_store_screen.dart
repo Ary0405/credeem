@@ -9,6 +9,7 @@ class SelectStoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0D1127),
       appBar: AppBar(
         title: const Text('Select Store'),
       ),
@@ -26,16 +27,19 @@ class SelectStoreScreen extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: storeData.length,
                   itemBuilder: (context, index) {
-                    return StoreOverviewCard(
-                      name: storeData[index].name,
-                      points: storeData[index].points,
-                      perksAvailable: storeData[index].perksAvailable,
-                      newPerks: storeData[index].newPerks,
-                      logoUrl: storeData[index].logoUrl,
-                      highlightNewPerks: false,
-                      onTap: () {
-                        Navigator.of(context).pop(storeData[index]);
-                      },
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      child: StoreOverviewCard(
+                        name: storeData[index].name,
+                        points: storeData[index].points,
+                        perksAvailable: storeData[index].perksAvailable,
+                        newPerks: storeData[index].newPerks,
+                        logoUrl: storeData[index].logoUrl,
+                        highlightNewPerks: false,
+                        onTap: () {
+                          Navigator.of(context).pop(storeData[index]);
+                        },
+                      ),
                     );
                   },
                 ),

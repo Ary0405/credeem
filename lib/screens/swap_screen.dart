@@ -40,17 +40,17 @@ class _SwapScreenState extends State<SwapScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 54, 61, 95),
+      backgroundColor: const Color(0xFF0D1127),
       body: SafeArea(
         child: Container(
           // gradient background
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color.fromARGB(255, 54, 61, 95), Color(0xff0D1127)],
-            ),
-          ),
+          // decoration: const BoxDecoration(
+          //   gradient: LinearGradient(
+          //     begin: Alignment.topLeft,
+          //     end: Alignment.bottomRight,
+          //     colors: [Color.fromARGB(255, 54, 61, 95), Color(0xff0D1127)],
+          //   ),
+          // ),
           child: Stack(
             children: [
               Positioned(
