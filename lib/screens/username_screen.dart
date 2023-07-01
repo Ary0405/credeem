@@ -1,11 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'dart:math' as math;
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class UsernameScreen extends StatelessWidget {
+  const UsernameScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                 child: Image.asset(
                   'assets/cart-blue.png',
                 ),
-                  scale: 1.7,
+                scale: 1.7,
               ),
             ),
             // login curved container
@@ -64,7 +62,11 @@ class LoginScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height: 30),
-                            SizedBox(child: Image.asset('assets/credeem-logotag.png', fit: BoxFit.cover), height: 70,),
+                            SizedBox(
+                              child: Image.asset('assets/credeem-logotag.png',
+                                  fit: BoxFit.cover),
+                              height: 70,
+                            ),
                             const SizedBox(height: 20),
                             // const Text(
                             //   'Login to continue',
@@ -91,43 +93,72 @@ class LoginScreen extends StatelessWidget {
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                
-                                child: InternationalPhoneNumberInput(
-                                  textStyle: const TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                  hintText: 'Phone Number',
-                                  cursorColor: Colors.white,
-                                  inputDecoration: const InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: 'Phone Number',
-                                    hintStyle: TextStyle(
-                                      color: Color.fromRGBO(255, 255, 255, 0.6),
+                                child: Row(
+                                  children: [
+                                    // User avatar icon on the left
+                                    // Username input field
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: Icon(
+                                        Icons.person,
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                                  
-                                  onInputChanged: (PhoneNumber number) {
-                                    print(number.phoneNumber);
-                                  },
-                                  selectorConfig: const SelectorConfig(
-                                    selectorType:
-                                        PhoneInputSelectorType.BOTTOM_SHEET,
-                                    leadingPadding: 10,
-                                    useEmoji: true,
-                                  ),
-                                  ignoreBlank: false,
-                                  selectorTextStyle:
-                                      const TextStyle(color: Colors.white),
-                                  initialValue: PhoneNumber(isoCode: 'IN'),
-                                  textFieldController: TextEditingController(),
-                                  formatInput: false,
-                                  keyboardType:
-                                      const TextInputType.numberWithOptions(),
-                                  onSaved: (PhoneNumber number) {
-                                    print('On Saved: $number');
-                                  },
-                                  spaceBetweenSelectorAndTextField: 0,
-                                  inputBorder: InputBorder.none,
+                                    
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.symmetric(horizontal: 8.0),
+                                      child: SizedBox(
+                                        width: 1,
+                                        height: 20,
+                                        child: Container(
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ),
+                                    
+                                    Expanded(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: Color.fromRGBO(
+                                              255, 255, 255, 0),
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          boxShadow: const [
+                                            BoxShadow(
+                                              color: Color.fromRGBO(
+                                                  113, 99, 186, .1),
+                                              spreadRadius: 5,
+                                              blurRadius: 7,
+                                              offset: Offset(0, 3),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          child: TextFormField(
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                            decoration: const InputDecoration(
+                                              border: InputBorder.none,
+                                              hintText: 'Username',
+                                              hintStyle: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    255, 255, 255, 0.6),
+                                              ),
+                                            ),
+                                            // Add any necessary validation or logic for the username input field
+                                            // onChanged: (value) {
+                                            //   // Handle username input changes
+                                            // },
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -136,18 +167,18 @@ class LoginScreen extends StatelessWidget {
                             const SizedBox(height: 20),
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, '/otp');
+                                Navigator.pushNamed(context, '/login');
                               },
                               child: Container(
                                 width: double.infinity,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                color: Color.fromRGBO(106, 153, 244, 1),
+                                  color: Color.fromRGBO(106, 153, 244, 1),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: const Center(
                                   child: Text(
-                                    'Get OTP',
+                                    'Continue',
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
