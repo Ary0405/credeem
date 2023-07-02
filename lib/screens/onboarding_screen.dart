@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:loyalty_app/screens/username_screen.dart';
-import "dart:math" as math;
-import 'login_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -32,7 +30,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     // 3 slides with title, subtitle and a lottie animation
     
     return Container(
-     color: Color(0xFF0D1127),
+     color: const Color(0xFF0D1127),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Padding(
@@ -73,8 +71,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               width: _pageIndex == index ? 16 : 8,
                               decoration: BoxDecoration(
                                 color: _pageIndex == index
-                                    ? Color.fromARGB(255, 255, 215, 15)
-                                    : Color.fromARGB(255, 255, 245, 168),
+                                    ? const Color.fromARGB(255, 255, 215, 15)
+                                    : const Color.fromARGB(255, 255, 245, 168),
                                 borderRadius: const BorderRadius.all(
                                   Radius.circular(12),
                                 ),
@@ -94,7 +92,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                         child: TextButton(
                           style: TextButton.styleFrom(
-                            backgroundColor: Color.fromRGBO(106, 153, 244, 1),
+                            backgroundColor: const Color.fromRGBO(106, 153, 244, 1),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18),
                             ),

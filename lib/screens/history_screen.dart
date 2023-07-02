@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loyalty_app/screens/store_screen.dart';
-import '../data/stores_data.dart';
-import '../widgets/store_overview.dart';
 import 'package:loyalty_app/custom_icons.dart';
 
 class Historyscreen extends StatelessWidget {

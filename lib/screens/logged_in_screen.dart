@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loyalty_app/screens/history_screen.dart';
-import 'package:loyalty_app/screens/login_screen.dart';
 import 'package:loyalty_app/screens/settings_screen.dart';
 import 'package:loyalty_app/screens/store_screen_temp.dart';
 import 'package:loyalty_app/screens/swap_screen.dart';

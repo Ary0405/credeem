@@ -8,7 +8,7 @@ class UsernameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF0D1127),
+      backgroundColor: const Color(0xFF0D1127),
       body: Center(
         // stack with trophy image and login curved container
         child: Stack(
@@ -30,10 +30,10 @@ class UsernameScreen extends StatelessWidget {
               left: 0,
               right: 0,
               child: Transform.scale(
+                scale: 1.7,
                 child: Image.asset(
                   'assets/cart-blue.png',
                 ),
-                scale: 1.7,
               ),
             ),
             // login curved container
@@ -63,9 +63,9 @@ class UsernameScreen extends StatelessWidget {
                           children: [
                             const SizedBox(height: 30),
                             SizedBox(
+                              height: 70,
                               child: Image.asset('assets/credeem-logotag.png',
                                   fit: BoxFit.cover),
-                              height: 70,
                             ),
                             const SizedBox(height: 20),
                             // const Text(
@@ -80,7 +80,7 @@ class UsernameScreen extends StatelessWidget {
                             // phone number input
                             Container(
                               decoration: BoxDecoration(
-                                color: Color.fromRGBO(255, 255, 255, 0.25),
+                                color: const Color.fromRGBO(255, 255, 255, 0.25),
                                 borderRadius: BorderRadius.circular(12),
                                 boxShadow: const [
                                   BoxShadow(
@@ -97,9 +97,9 @@ class UsernameScreen extends StatelessWidget {
                                   children: [
                                     // User avatar icon on the left
                                     // Username input field
-                                    Padding(
+                                    const Padding(
                                       padding:
-                                          const EdgeInsets.symmetric(horizontal: 8.0),
+                                          EdgeInsets.symmetric(horizontal: 8.0),
                                       child: Icon(
                                         Icons.person,
                                         color: Colors.white,
@@ -121,7 +121,7 @@ class UsernameScreen extends StatelessWidget {
                                     Expanded(
                                       child: Container(
                                         decoration: BoxDecoration(
-                                          color: Color.fromRGBO(
+                                          color: const Color.fromRGBO(
                                               255, 255, 255, 0),
                                           borderRadius:
                                               BorderRadius.circular(12),
@@ -173,7 +173,7 @@ class UsernameScreen extends StatelessWidget {
                                 width: double.infinity,
                                 height: 50,
                                 decoration: BoxDecoration(
-                                  color: Color.fromRGBO(106, 153, 244, 1),
+                                  color: const Color.fromRGBO(106, 153, 244, 1),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: const Center(
