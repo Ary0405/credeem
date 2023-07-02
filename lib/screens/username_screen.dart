@@ -1,12 +1,22 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class UsernameScreen extends StatelessWidget {
+import '../providers/auth_provider.dart';
+
+class UsernameScreen extends StatefulWidget {
   const UsernameScreen({super.key});
 
   @override
+  State<UsernameScreen> createState() => _UsernameScreenState();
+}
+
+class _UsernameScreenState extends State<UsernameScreen> {
+  final usernameController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
+    final user = Provider.of<Auth>(context);
     return Scaffold(
       backgroundColor: const Color(0xFF0D1127),
       body: Center(
@@ -80,7 +90,8 @@ class UsernameScreen extends StatelessWidget {
                             // phone number input
                             Container(
                               decoration: BoxDecoration(
-                                color: const Color.fromRGBO(255, 255, 255, 0.25),
+                                color:
+                                    const Color.fromRGBO(255, 255, 255, 0.25),
                                 borderRadius: BorderRadius.circular(12),
                                 boxShadow: const [
                                   BoxShadow(
@@ -105,19 +116,18 @@ class UsernameScreen extends StatelessWidget {
                                         color: Colors.white,
                                       ),
                                     ),
-                                    
+
                                     Padding(
-                                      padding:
-                                          const EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: SizedBox(
-                                        width: 1,
-                                        height: 20,
-                                        child: Container(
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    ),
-                                    
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 8.0),
+                                        child: SizedBox(
+                                          width: 1,
+                                          height: 20,
+                                          child: Container(
+                                            color: Colors.white,
+                                          ),
+                                        )),
+
                                     Expanded(
                                       child: Container(
                                         decoration: BoxDecoration(
@@ -139,6 +149,7 @@ class UsernameScreen extends StatelessWidget {
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 8.0),
                                           child: TextFormField(
+                                            controller: usernameController,
                                             style: const TextStyle(
                                               color: Colors.white,
                                             ),
@@ -167,6 +178,7 @@ class UsernameScreen extends StatelessWidget {
                             const SizedBox(height: 20),
                             InkWell(
                               onTap: () {
+                                user.toggleUsername(usernameController.text);
                                 Navigator.pushNamed(context, '/login');
                               },
                               child: Container(
