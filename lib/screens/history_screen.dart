@@ -299,7 +299,7 @@ class PassbookEntryCard extends StatelessWidget {
               child: Row(
                 children: [
                   Image.asset(
-                    type == "credit" ? "assets/credit.png" : "assets/debit.png",
+                    type == "credit" ? "assets/green_coin.png" : "assets/red_coin.png",
                     height: 12,
                     width: 12,
                   ),

@@ -45,7 +45,7 @@ class SuccessScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/');
+                    Navigator.pushNamed(context, '/logged_in');
                   },
                   child: Lottie.asset(
                     'assets/done.json',

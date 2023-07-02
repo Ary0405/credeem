@@ -84,7 +84,7 @@ class StoresNearYou extends StatelessWidget {
                                           ),
                                         ),
                                         Image.asset(
-                                          'assets/points-star.png',
+                                          'assets/green_coin.png',
                                           width: 20,
                                           height: 20,
                                         ),

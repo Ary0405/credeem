@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loyalty_app/screens/history_screen.dart';
 import 'package:loyalty_app/screens/settings_screen.dart';
-import 'package:loyalty_app/screens/store_screen_temp.dart';
+import 'package:loyalty_app/screens/store_screen.dart';
 import 'package:loyalty_app/screens/swap_screen.dart';
 
 import '../custom_icons.dart';
@@ -16,7 +16,7 @@ class LoggedInScreen extends StatefulWidget {
 class _LoggedInScreenState extends State<LoggedInScreen> {
   int _selectedIndex = 0;
   final List<Widget> screens = [
-    const StoreScreenTemp(),
+    const StoreScreen(),
     const Historyscreen(),
     const SwapScreen(),
     const SettingsScreen(),
@@ -37,7 +37,7 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
             _selectedIndex = index;
           });
         },
-        selectedItemColor: const Color(0xFFE0E063),
+        selectedItemColor: const Color(0xFFA3DDC9),
         unselectedItemColor: const Color(0xFF838383),
         iconSize: 36,
         type: BottomNavigationBarType.fixed,

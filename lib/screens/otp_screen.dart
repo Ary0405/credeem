@@ -7,7 +7,6 @@ import 'package:otp_text_field/style.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:loader_overlay/loader_overlay.dart';
-import 'dart:math' as math;
 
 import '../providers/auth_provider.dart';
 
@@ -80,12 +79,14 @@ class _OtpScreenState extends State<OtpScreen> {
                       }),
                     );
                     if (res.statusCode == 200) {
+                      // ignore: avoid_print
                       print("user created");
                       // ignore: use_build_context_synchronously
                       context.loaderOverlay.hide();
                       // ignore: use_build_context_synchronously
                       Navigator.pushNamed(context, '/logged_in');
                     } else {
+                      // ignore: avoid_print
                       print("error");
                       // ignore: use_build_context_synchronously
                       context.loaderOverlay.hide();

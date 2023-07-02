@@ -1,6 +1,10 @@
+import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:loader_overlay/loader_overlay.dart';
+import 'package:http/http.dart' as http;
 import '../custom_icons.dart';
 import '../data/stores_data.dart';
 import '../model/store_model.dart';
@@ -39,18 +43,10 @@ class _SwapScreenState extends State<SwapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF0D1127),
-      body: SafeArea(
-        child: Container(
-          // gradient background
-          // decoration: const BoxDecoration(
-          //   gradient: LinearGradient(
-          //     begin: Alignment.topLeft,
-          //     end: Alignment.bottomRight,
-          //     colors: [Color.fromARGB(255, 54, 61, 95), Color(0xff0D1127)],
-          //   ),
-          // ),
+    return LoaderOverlay(
+      child: Scaffold(
+        backgroundColor: const Color(0xFF0D1127),
+        body: SafeArea(
           child: Stack(
             children: [
               Positioned(
@@ -94,7 +90,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                     ),
                                     child: const Icon(
                                       Icons.info_outline,
-                                      color: Color.fromRGBO(255, 255, 255, .2),
+                                      color:
+                                          Color.fromRGBO(255, 255, 255, .2),
                                     ),
                                   ),
                                 ],
@@ -141,15 +138,16 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             30),
                                                     splashColor: Colors.white
                                                         .withOpacity(.05),
-                                                    highlightColor: Colors.white
+                                                    highlightColor: Colors
+                                                        .white
                                                         .withOpacity(.05),
                                                     onTap: () =>
                                                         _navigateAndSelectSourceStore(
                                                             context),
                                                     child: Container(
                                                       padding:
-                                                          const EdgeInsets.all(
-                                                              8),
+                                                          const EdgeInsets
+                                                              .all(8),
                                                       child: Row(
                                                         children: [
                                                           Container(
@@ -157,8 +155,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             width: 50,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color:
-                                                                  Colors.white,
+                                                              color: Colors
+                                                                  .white,
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
@@ -177,7 +175,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                           const Icon(
                                                             CustomIcons
                                                                 .dropdown,
-                                                            color: Colors.white,
+                                                            color:
+                                                                Colors.white,
                                                             size: 10,
                                                           ),
                                                         ],
@@ -191,13 +190,19 @@ class _SwapScreenState extends State<SwapScreen> {
                                                   child: Container(
                                                     height: 50,
                                                     width: 100,
-                                                    decoration: ShapeDecoration(
+                                                    decoration:
+                                                        ShapeDecoration(
                                                       shadows: const [
                                                         BoxShadow(
-                                                          color: Color.fromARGB(
-                                                              255, 54, 61, 95),
+                                                          color:
+                                                              Color.fromARGB(
+                                                                  255,
+                                                                  54,
+                                                                  61,
+                                                                  95),
                                                           blurRadius: 1,
-                                                          offset: Offset(0, 0),
+                                                          offset:
+                                                              Offset(0, 0),
                                                         ),
                                                       ],
                                                       shape:
@@ -212,7 +217,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                       textAlign:
                                                           TextAlign.center,
                                                       keyboardType:
-                                                          TextInputType.number,
+                                                          TextInputType
+                                                              .number,
                                                       style: const TextStyle(
                                                         fontSize: 20,
                                                         color: Colors.white,
@@ -239,11 +245,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                                         .bold),
                                                         suffixIcon:
                                                             Transform.rotate(
-                                                          angle: math.pi * 0.1,
+                                                          angle:
+                                                              math.pi * 0.1,
                                                           child: const Icon(
-                                                            CustomIcons.star_7,
-                                                            color:
-                                                                Color.fromRGBO(
+                                                            CustomIcons
+                                                                .star_7,
+                                                            color: Color
+                                                                .fromRGBO(
                                                                     254,
                                                                     134,
                                                                     173,
@@ -270,15 +278,16 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             30),
                                                     splashColor: Colors.white
                                                         .withOpacity(.05),
-                                                    highlightColor: Colors.white
+                                                    highlightColor: Colors
+                                                        .white
                                                         .withOpacity(.05),
                                                     onTap: () =>
                                                         _navigateAndSelectFinalStore(
                                                             context),
                                                     child: Container(
                                                       padding:
-                                                          const EdgeInsets.all(
-                                                              8),
+                                                          const EdgeInsets
+                                                              .all(8),
                                                       child: Row(
                                                         children: [
                                                           Container(
@@ -286,8 +295,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             width: 50,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color:
-                                                                  Colors.white,
+                                                              color: Colors
+                                                                  .white,
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
@@ -317,7 +326,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                           const Icon(
                                                             CustomIcons
                                                                 .dropdown,
-                                                            color: Colors.white,
+                                                            color:
+                                                                Colors.white,
                                                             size: 10,
                                                           ),
                                                         ],
@@ -331,13 +341,19 @@ class _SwapScreenState extends State<SwapScreen> {
                                                   child: Container(
                                                     height: 50,
                                                     width: 100,
-                                                    decoration: ShapeDecoration(
+                                                    decoration:
+                                                        ShapeDecoration(
                                                       shadows: const [
                                                         BoxShadow(
-                                                          color: Color.fromARGB(
-                                                              255, 54, 61, 95),
+                                                          color:
+                                                              Color.fromARGB(
+                                                                  255,
+                                                                  54,
+                                                                  61,
+                                                                  95),
                                                           blurRadius: 1,
-                                                          offset: Offset(0, 0),
+                                                          offset:
+                                                              Offset(0, 0),
                                                         ),
                                                       ],
                                                       shape:
@@ -352,7 +368,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                       textAlign:
                                                           TextAlign.center,
                                                       keyboardType:
-                                                          TextInputType.number,
+                                                          TextInputType
+                                                              .number,
                                                       style: const TextStyle(
                                                         fontSize: 20,
                                                         color: Colors.white,
@@ -379,11 +396,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                                         .bold),
                                                         suffixIcon:
                                                             Transform.rotate(
-                                                          angle: math.pi * 0.1,
+                                                          angle:
+                                                              math.pi * 0.1,
                                                           child: const Icon(
-                                                            CustomIcons.star_7,
-                                                            color:
-                                                                Color.fromRGBO(
+                                                            CustomIcons
+                                                                .star_7,
+                                                            color: Color
+                                                                .fromRGBO(
                                                                     254,
                                                                     134,
                                                                     173,
@@ -407,7 +426,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                               child: Container(
                                                 height: 60,
                                                 width: 60,
-                                                decoration: const BoxDecoration(
+                                                decoration:
+                                                    const BoxDecoration(
                                                   color: Color(0xff0D1127),
                                                   shape: BoxShape.circle,
                                                   boxShadow: [
@@ -440,7 +460,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                     ? Container(
                                         height: 80,
                                         decoration: BoxDecoration(
-                                          color: const Color.fromARGB(255, 54, 61, 95),
+                                          color: const Color.fromARGB(
+                                              255, 54, 61, 95),
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),
@@ -457,10 +478,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                             Text(
                                               "Tap to Choose Store",
                                               style: TextStyle(
-                                                fontSize: 16,
-                                                color:
-                                                    Colors.white
-                                              ),
+                                                  fontSize: 16,
+                                                  color: Colors.white),
                                             ),
                                           ],
                                         ),
@@ -478,7 +497,40 @@ class _SwapScreenState extends State<SwapScreen> {
                               const SizedBox(height: 35),
                               // slde to confirm button
                               ConfirmationSlider(
-                                onConfirmation: () => {},
+                                onConfirmation: () async {
+                                  Navigator.pushNamed(context, '/waiting');
+                                  Response res = await http.post(
+                                    Uri.parse(
+                                        'http://192.168.1.2:3000/credits/swap'),
+                                    headers: <String, String>{
+                                      'Content-Type':
+                                          'application/json; charset=UTF-8',
+                                    },
+                                    body: jsonEncode(<String, String>{
+                                      "fromBusiness": "kaju",
+                                      "toBusiness": "badam",
+                                      "fromBusinessAmount": "100",
+                                      "toBusinessAmount": "80",
+                                      "userAccount": "manoj.credeem.testnet"
+                                    }),
+                                  );
+                                  if (res.statusCode == 200) {
+                                    // ignore: use_build_context_synchronously
+                                    Navigator.pop(context);
+                                    // ignore: avoid_print
+                                    print("swap completed");
+                                    // ignore: use_build_context_synchronously
+                                    Navigator.pushNamed(context, '/success');
+                                  } else {
+                                    // ignore: avoid_print
+                                    print("swap incomplete");
+                                    // ignore: use_build_context_synchronously
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/logged_in',
+                                    );
+                                  }
+                                },
                                 stickToEnd: true,
                                 sliderButtonContent: const Icon(
                                   Icons.arrow_forward_ios,

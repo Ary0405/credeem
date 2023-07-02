@@ -106,6 +106,7 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                   
                                   onInputChanged: (PhoneNumber number) {
+                                    // ignore: avoid_print
                                     print(number.phoneNumber);
                                   },
                                   selectorConfig: const SelectorConfig(
@@ -123,6 +124,7 @@ class LoginScreen extends StatelessWidget {
                                   keyboardType:
                                       const TextInputType.numberWithOptions(),
                                   onSaved: (PhoneNumber number) {
+                                    // ignore: avoid_print
                                     print('On Saved: $number');
                                   },
                                   spaceBetweenSelectorAndTextField: 0,

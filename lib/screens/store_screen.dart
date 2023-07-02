@@ -1,6 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import '../data/stores_data.dart';
-import '../widgets/store_overview.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../widgets/exciting_offers.dart';
+import '../widgets/existing_offer.dart';
+import '../widgets/stores_near_you.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({
@@ -9,110 +13,156 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        color: const Color(0xFF151517),
-        padding: const EdgeInsets.only(top: 18, left: 32, right: 32),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  'assets/logo.png',
-                ),
-                // rounded image
-                InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/settings');
-                  },
-                  child: Container(
-                    height: 42,
-                    width: 42,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            "https://avatars.githubusercontent.com/u/41837037?v=4"),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 25),
-            // search and sort
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Expanded(
-                  child: SearchBox(),
-                ),
-                const SizedBox(width: 10),
-                // rounded ripple button
-                InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(8),
-                  splashColor: Colors.white.withOpacity(0.6499999761581421),
-                  child: Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF2F2F30),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Icon(
-                      Icons.sort,
-                      color: Colors.white.withOpacity(0.6499999761581421),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 25),
-            // stores list
-            Text(
-              'Stores Near You',
-              style: TextStyle(
-                color: Colors.white.withOpacity(0.6000000238418579),
-                fontSize: 18,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            const SizedBox(height: 20),
-            //list of stores scrollable cards
-            Expanded(
-              child: ScrollConfiguration(
-                behavior: const ScrollBehavior(),
-                child: ListView.builder(
-                  itemCount: storeData.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 20.0),
-                      child: StoreOverviewCard(
-                        name: storeData[index].name,
-                        points: storeData[index].points,
-                        perksAvailable: storeData[index].perksAvailable,
-                        newPerks: storeData[index].newPerks,
-                        logoUrl: storeData[index].logoUrl,
-                        highlightNewPerks: true,
-                        onTap: () {
-                          Navigator.pushNamed(
-                            context,
-                            '/store_details',
-                            arguments: storeData[index],
-                          );
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ],
+    return Container(
+      decoration: ShapeDecoration(
+        color: const Color(0xFF0D1325),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(0),
         ),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            left: MediaQuery.of(context).size.width * .5,
+            top: MediaQuery.of(context).size.width * .05,
+            child: Image.asset(
+              'assets/ball.png',
+              width: MediaQuery.of(context).size.width * .7,
+              height: MediaQuery.of(context).size.width * .7,
+            ),
+          ),
+          Positioned(
+            left: -MediaQuery.of(context).size.width * .3,
+            top: MediaQuery.of(context).size.width * .7,
+            child: Image.asset(
+              'assets/ball.png',
+              width: MediaQuery.of(context).size.width * .9,
+              height: MediaQuery.of(context).size.height * .9,
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.width * 0.1,
+                    left: MediaQuery.of(context).size.width * 0.03,
+                    right: MediaQuery.of(context).size.width * 0.03,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(27),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                        sigmaX: 50.0,
+                        sigmaY: 50.0,
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.all(
+                          MediaQuery.of(context).size.width * .04,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Credeem',
+                                  style: GoogleFonts.montserrat(
+                                    color: const Color(0xFFF6FFFC),
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w500,
+                                    letterSpacing: 2.02,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * .02,
+                                ),
+                                Text(
+                                  'Welcome back,',
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                                Text(
+                                  'Divyang!',
+                                  style: GoogleFonts.montserrat(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * .02,
+                                ),
+                                Container(
+                                  width: 200,
+                                  height: 40,
+                                  decoration: ShapeDecoration(
+                                    color: const Color(0x14FFFCFC),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(7)),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Transaction History >',
+                                      style: GoogleFonts.poppins(
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            Container(
+                              height: 60,
+                              width: 60,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://avatars.githubusercontent.com/u/41837037?v=4"),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 18,
+                ),
+                const ExistingOffer(),
+                const SizedBox(
+                  height: 18,
+                ),
+                Padding(
+                  padding: EdgeInsets.all(
+                    MediaQuery.of(context).size.width * 0.03,
+                  ),
+                  child: const SearchBox(),
+                ),
+                const StoresNearYou(),
+                const SizedBox(
+                  height: 18,
+                ),
+                const ExcitingOffers(),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
