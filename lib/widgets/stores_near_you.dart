@@ -16,7 +16,7 @@ class StoresNearYou extends StatelessWidget {
             left: MediaQuery.of(context).size.width * 0.04,
           ),
           child: Text(
-            'Stores Near You',
+            'Popular Stores',
             style: GoogleFonts.poppins(
               color: Colors.white,
               fontSize: 20,

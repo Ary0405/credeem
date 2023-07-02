@@ -469,9 +469,10 @@ class _SwapScreenState extends State<SwapScreen> {
                               ConfirmationSlider(
                                 onConfirmation: () async {
                                   Navigator.pushNamed(context, '/waiting');
+
                                   Response res = await http.post(
                                     Uri.parse(
-                                        'http://192.168.1.2:3000/credits/swap'),
+                                        'http://192.168.1.16:3000/credits/swap'),
                                     headers: <String, String>{
                                       'Content-Type':
                                           'application/json; charset=UTF-8',
@@ -486,7 +487,6 @@ class _SwapScreenState extends State<SwapScreen> {
                                   );
                                   if (res.statusCode == 200) {
                                     // ignore: use_build_context_synchronously
-                                    Navigator.pop(context);
                                     // ignore: avoid_print
                                     print("swap completed");
                                     // ignore: use_build_context_synchronously
