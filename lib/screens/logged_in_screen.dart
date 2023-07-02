@@ -45,8 +45,8 @@ class _LoggedInScreenState extends State<LoggedInScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(
-              size: 30,
-              CustomIcons.star_7,
+              size: 36,
+              Icons.home_filled,
             ),
             label: 'Points',
           ),

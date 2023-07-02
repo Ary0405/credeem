@@ -90,8 +90,7 @@ class _SwapScreenState extends State<SwapScreen> {
                                     ),
                                     child: const Icon(
                                       Icons.info_outline,
-                                      color:
-                                          Color.fromRGBO(255, 255, 255, .2),
+                                      color: Color.fromRGBO(255, 255, 255, .2),
                                     ),
                                   ),
                                 ],
@@ -138,16 +137,15 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             30),
                                                     splashColor: Colors.white
                                                         .withOpacity(.05),
-                                                    highlightColor: Colors
-                                                        .white
+                                                    highlightColor: Colors.white
                                                         .withOpacity(.05),
                                                     onTap: () =>
                                                         _navigateAndSelectSourceStore(
                                                             context),
                                                     child: Container(
                                                       padding:
-                                                          const EdgeInsets
-                                                              .all(8),
+                                                          const EdgeInsets.all(
+                                                              8),
                                                       child: Row(
                                                         children: [
                                                           Container(
@@ -155,8 +153,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             width: 50,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color: Colors
-                                                                  .white,
+                                                              color:
+                                                                  Colors.white,
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
@@ -175,8 +173,7 @@ class _SwapScreenState extends State<SwapScreen> {
                                                           const Icon(
                                                             CustomIcons
                                                                 .dropdown,
-                                                            color:
-                                                                Colors.white,
+                                                            color: Colors.white,
                                                             size: 10,
                                                           ),
                                                         ],
@@ -190,19 +187,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                   child: Container(
                                                     height: 50,
                                                     width: 100,
-                                                    decoration:
-                                                        ShapeDecoration(
+                                                    decoration: ShapeDecoration(
                                                       shadows: const [
                                                         BoxShadow(
-                                                          color:
-                                                              Color.fromARGB(
-                                                                  255,
-                                                                  54,
-                                                                  61,
-                                                                  95),
+                                                          color: Color.fromARGB(
+                                                              255, 54, 61, 95),
                                                           blurRadius: 1,
-                                                          offset:
-                                                              Offset(0, 0),
+                                                          offset: Offset(0, 0),
                                                         ),
                                                       ],
                                                       shape:
@@ -217,8 +208,7 @@ class _SwapScreenState extends State<SwapScreen> {
                                                       textAlign:
                                                           TextAlign.center,
                                                       keyboardType:
-                                                          TextInputType
-                                                              .number,
+                                                          TextInputType.number,
                                                       style: const TextStyle(
                                                         fontSize: 20,
                                                         color: Colors.white,
@@ -244,18 +234,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                                     FontWeight
                                                                         .bold),
                                                         suffixIcon:
-                                                            Transform.rotate(
-                                                          angle:
-                                                              math.pi * 0.1,
-                                                          child: const Icon(
-                                                            CustomIcons
-                                                                .star_7,
-                                                            color: Color
-                                                                .fromRGBO(
-                                                                    254,
-                                                                    134,
-                                                                    173,
-                                                                    1),
+                                                            Transform.scale(
+                                                          scale: 0.8,
+                                                          child: IconButton(
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/green_coin.png",
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -278,16 +263,15 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             30),
                                                     splashColor: Colors.white
                                                         .withOpacity(.05),
-                                                    highlightColor: Colors
-                                                        .white
+                                                    highlightColor: Colors.white
                                                         .withOpacity(.05),
                                                     onTap: () =>
                                                         _navigateAndSelectFinalStore(
                                                             context),
                                                     child: Container(
                                                       padding:
-                                                          const EdgeInsets
-                                                              .all(8),
+                                                          const EdgeInsets.all(
+                                                              8),
                                                       child: Row(
                                                         children: [
                                                           Container(
@@ -295,8 +279,8 @@ class _SwapScreenState extends State<SwapScreen> {
                                                             width: 50,
                                                             decoration:
                                                                 const BoxDecoration(
-                                                              color: Colors
-                                                                  .white,
+                                                              color:
+                                                                  Colors.white,
                                                               shape: BoxShape
                                                                   .circle,
                                                             ),
@@ -326,8 +310,7 @@ class _SwapScreenState extends State<SwapScreen> {
                                                           const Icon(
                                                             CustomIcons
                                                                 .dropdown,
-                                                            color:
-                                                                Colors.white,
+                                                            color: Colors.white,
                                                             size: 10,
                                                           ),
                                                         ],
@@ -341,19 +324,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                   child: Container(
                                                     height: 50,
                                                     width: 100,
-                                                    decoration:
-                                                        ShapeDecoration(
+                                                    decoration: ShapeDecoration(
                                                       shadows: const [
                                                         BoxShadow(
-                                                          color:
-                                                              Color.fromARGB(
-                                                                  255,
-                                                                  54,
-                                                                  61,
-                                                                  95),
+                                                          color: Color.fromARGB(
+                                                              255, 54, 61, 95),
                                                           blurRadius: 1,
-                                                          offset:
-                                                              Offset(0, 0),
+                                                          offset: Offset(0, 0),
                                                         ),
                                                       ],
                                                       shape:
@@ -368,8 +345,7 @@ class _SwapScreenState extends State<SwapScreen> {
                                                       textAlign:
                                                           TextAlign.center,
                                                       keyboardType:
-                                                          TextInputType
-                                                              .number,
+                                                          TextInputType.number,
                                                       style: const TextStyle(
                                                         fontSize: 20,
                                                         color: Colors.white,
@@ -395,18 +371,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                                     FontWeight
                                                                         .bold),
                                                         suffixIcon:
-                                                            Transform.rotate(
-                                                          angle:
-                                                              math.pi * 0.1,
-                                                          child: const Icon(
-                                                            CustomIcons
-                                                                .star_7,
-                                                            color: Color
-                                                                .fromRGBO(
-                                                                    254,
-                                                                    134,
-                                                                    173,
-                                                                    1),
+                                                            Transform.scale(
+                                                          scale: 0.8,
+                                                          child: IconButton(
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/green_coin.png",
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -426,8 +397,7 @@ class _SwapScreenState extends State<SwapScreen> {
                                               child: Container(
                                                 height: 60,
                                                 width: 60,
-                                                decoration:
-                                                    const BoxDecoration(
+                                                decoration: const BoxDecoration(
                                                   color: Color(0xff0D1127),
                                                   shape: BoxShape.circle,
                                                   boxShadow: [

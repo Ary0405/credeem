@@ -24,7 +24,11 @@ class _OtpScreenState extends State<OtpScreen> {
     return LoaderOverlay(
       child: Container(
         decoration: const BoxDecoration(
-          color: Color(0xFF0D1127),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF212C5D), Color(0xFF161F38)],
+          ),
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
