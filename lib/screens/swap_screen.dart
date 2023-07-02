@@ -234,16 +234,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                                     FontWeight
                                                                         .bold),
                                                         suffixIcon:
-                                                            Transform.rotate(
-                                                          angle: math.pi * 0.1,
-                                                          child: const Icon(
-                                                            CustomIcons.star_7,
-                                                            color:
-                                                                Color.fromRGBO(
-                                                                    254,
-                                                                    134,
-                                                                    173,
-                                                                    1),
+                                                            Transform.scale(
+                                                          scale: 0.8,
+                                                          child: IconButton(
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/green_coin.png",
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
@@ -374,16 +371,13 @@ class _SwapScreenState extends State<SwapScreen> {
                                                                     FontWeight
                                                                         .bold),
                                                         suffixIcon:
-                                                            Transform.rotate(
-                                                          angle: math.pi * 0.1,
-                                                          child: const Icon(
-                                                            CustomIcons.star_7,
-                                                            color:
-                                                                Color.fromRGBO(
-                                                                    254,
-                                                                    134,
-                                                                    173,
-                                                                    1),
+                                                            Transform.scale(
+                                                          scale: 0.8,
+                                                          child: IconButton(
+                                                            onPressed: () {},
+                                                            icon: Image.asset(
+                                                              "assets/green_coin.png",
+                                                            ),
                                                           ),
                                                         ),
                                                       ),

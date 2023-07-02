@@ -23,7 +23,7 @@ class SettingsScreen extends StatelessWidget {
                     child: Text(
                       'My Account',
                       style: GoogleFonts.poppins(
-                        color: const Color(0xFF7163BA),
+                        color: Colors.white,
                         fontSize: 36,
                         fontWeight: FontWeight.w700,
                       ),
