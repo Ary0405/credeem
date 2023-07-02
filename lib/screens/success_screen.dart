@@ -8,7 +8,7 @@ class SuccessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color(0xFF0D1127),
       body: Stack(
         children: [
           Positioned(
@@ -16,9 +16,11 @@ class SuccessScreen extends StatelessWidget {
             left: 0,
             child: Lottie.asset(
               'assets/confetti.json',
+              repeat: false,
             ),
           ),
           Container(
+            width: double.infinity,
             padding: EdgeInsets.all(MediaQuery.of(context).size.width * .05),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -26,30 +28,38 @@ class SuccessScreen extends StatelessWidget {
               children: [
                 Lottie.asset(
                   'assets/success.json',
-                  width: 150,
+                  width: 200,
+                  fit: BoxFit.cover,
+                  repeat: false,
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  'The Transaction Is Successfull',
+                  'Credit Swap Complete!',
                   style: GoogleFonts.poppins(
                     fontSize: 25,
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const SizedBox(
-                  height: 13,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/logged_in');
-                  },
-                  child: Lottie.asset(
-                    'assets/done.json',
-                    width: 150,
+                Theme(
+                  data: ThemeData(
+                    splashColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                  ),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/logged_in');
+                      // no splash
+                    },
+                    child: Lottie.asset(
+                      'assets/done.json',
+                      width: 100,
+                      fit: BoxFit.cover,
+                      repeat: false,
+                    ),
                   ),
                 ),
               ],

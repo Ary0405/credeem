@@ -8,27 +8,30 @@ class WaitingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: Container(
-        padding: EdgeInsets.all(MediaQuery.of(context).size.width * .05),
+      backgroundColor: const Color(0xFF0D1127),
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Lottie.asset(
-              'assets/waiting.json',
+            SizedBox(
+              height: 200,
               width: 200,
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+              ),
             ),
-            const SizedBox(
-              height: 15,
+            SizedBox(
+              height: 40,
             ),
             Text(
-              textAlign: TextAlign.center,
-              'Waiting for Confirmation',
+              'Waiting for confirmation...',
               style: GoogleFonts.poppins(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
           ],
         ),
