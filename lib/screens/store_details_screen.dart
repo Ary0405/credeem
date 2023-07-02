@@ -195,87 +195,6 @@ class StoreDetailsScreen extends StatelessWidget {
                 Expanded(
                   child: ScrollConfiguration(
                     behavior: NoGlowOnScroll(),
-                    // child: GridView.builder(
-                    //   physics: const BouncingScrollPhysics(),
-                    //   gridDelegate:
-                    //       const SliverGridDelegateWithFixedCrossAxisCount(
-                    //     crossAxisCount: 2,
-                    //     crossAxisSpacing: 10,
-                    //     mainAxisSpacing: 10,
-                    //     childAspectRatio: 0.8,
-                    //   ),
-                    //   itemCount: perksData.length,
-                    //   itemBuilder: (context, index) {
-                    //     return Container(
-                    //       padding: const EdgeInsets.symmetric(
-                    //         horizontal: 18,
-                    //         vertical: 0,
-                    //       ),
-                    //       decoration: BoxDecoration(
-                    //         borderRadius: BorderRadius.circular(20),
-                    //         color: perksData[index].locked
-                    //             ? const Color.fromRGBO(96, 96, 96, 1)
-                    //             : const Color.fromRGBO(128, 99, 190, 1),
-                    //       ),
-                    //       child: Column(
-                    //         mainAxisAlignment: MainAxisAlignment.center,
-                    //         crossAxisAlignment: CrossAxisAlignment.start,
-                    //         children: [
-                    //           Row(
-                    //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //             children: [
-                    //               Image.asset(perksData[index].iconUrl),
-                    //               Container(
-                    //                 padding: const EdgeInsets.symmetric(
-                    //                   vertical: 5,
-                    //                   horizontal: 12,
-                    //                 ),
-                    //                 decoration: BoxDecoration(
-                    //                   color: Colors.white,
-                    //                   borderRadius: BorderRadius.circular(20),
-                    //                 ),
-                    //                 child: Row(
-                    //                   children: [
-                    //                     Image.asset(
-                    //                       'assets/points-star.png',
-                    //                       height: 18,
-                    //                       width: 18,
-                    //                     ),
-                    //                     Text(
-                    //                       args.points.toString(),
-                    //                       style: const TextStyle(
-                    //                         fontSize: 14,
-                    //                         fontWeight: FontWeight.w500,
-                    //                       ),
-                    //                     ),
-                    //                   ],
-                    //                 ),
-                    //               ),
-                    //             ],
-                    //           ),
-                    //           const SizedBox(height: 10),
-                    //           Text(
-                    //             perksData[index].title,
-                    //             style: const TextStyle(
-                    //               color: Colors.white,
-                    //               fontSize: 16,
-                    //               fontWeight: FontWeight.w400,
-                    //             ),
-                    //           ),
-                    //           const SizedBox(height: 5),
-                    //           Text(
-                    //             perksData[index].description,
-                    //             style: const TextStyle(
-                    //               color: Colors.white54,
-                    //               fontSize: 12,
-                    //               fontWeight: FontWeight.w400,
-                    //             ),
-                    //           ),
-                    //         ],
-                    //       ),
-                    //     );
-                    //   },
-                    // ),
                     child: GridView.custom(
                       gridDelegate: SliverWovenGridDelegate.count(
                         crossAxisCount: 2,
@@ -338,7 +257,7 @@ class StoreDetailsScreen extends StatelessWidget {
                                     child: Row(
                                       children: [
                                         Image.asset(
-                                          'assets/points-star.png',
+                                          'assets/green_coin.png',
                                           height: 18,
                                           width: 18,
                                         ),

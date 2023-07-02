@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             child: child ?? const SizedBox(),
           );
         },
-        home: const UsernameScreen(),
+        home: const LoggedInScreen(),
         routes: {
           '/settings': (context) => const SettingsScreen(),
           '/store_details': (context) => const StoreDetailsScreen(),
