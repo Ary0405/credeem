@@ -20,29 +20,29 @@ List<StoreModel> storeData = [
   ),
   StoreModel(
     id: 3,
-    name: 'Amazon',
-    points: 450,
+    name: 'Starbucks',
+    points: 250,
     perksAvailable: 7,
     newPerks: 0,
     logoUrl:
-        'https://companieslogo.com/img/orig/AMZN-e9f942e4.png?t=1632523695',
+        'https://companieslogo.com/img/orig/SBUX-0200dcbd.png?t=1633439375',
   ),
   StoreModel(
     id: 4,
-    name: 'Amazon',
-    points: 450,
+    name: 'Adidas',
+    points: 375,
     perksAvailable: 7,
     newPerks: 0,
     logoUrl:
-        'https://companieslogo.com/img/orig/AMZN-e9f942e4.png?t=1632523695',
+        'https://companieslogo.com/img/orig/ADS.DE_BIG-667fcda8.png?t=1635011710',
   ),
   StoreModel(
     id: 5,
-    name: 'Amazon',
-    points: 450,
+    name: 'Nike',
+    points: 100,
     perksAvailable: 7,
     newPerks: 0,
     logoUrl:
-        'https://companieslogo.com/img/orig/AMZN-e9f942e4.png?t=1632523695',
+        'https://companieslogo.com/img/orig/NKE-0c8add60.png?t=1632522146',
   ),
 ];

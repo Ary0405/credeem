@@ -72,39 +72,40 @@ class _OtpScreenState extends State<OtpScreen> {
                   textFieldAlignment: MainAxisAlignment.spaceAround,
                   fieldStyle: FieldStyle.box,
                   onCompleted: (pin) async {
-                    context.loaderOverlay.show(
-                      widget: Expanded(
-                        child: Container(
-                          color: Colors.black.withOpacity(1),
-                          child: const Center(
-                            child: CircularProgressIndicator(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                    Response res = await http.post(
-                      Uri.parse('http://192.168.1.16:3000/user/new'),
-                      headers: <String, String>{
-                        'Content-Type': 'application/json; charset=UTF-8',
-                      },
-                      body: jsonEncode(<String, String>{
-                        'user': user.username,
-                      }),
-                    );
-                    if (res.statusCode == 200) {
-                      // ignore: avoid_print
-                      print("user created");
-                      // ignore: use_build_context_synchronously
-                      context.loaderOverlay.hide();
-                    // ignore: use_build_context_synchronously
-                    } else {
-                      // ignore: avoid_print
-                      print("error");
-                      // ignore: use_build_context_synchronously
-                      context.loaderOverlay.hide();
-                    }
+                    // context.loaderOverlay.show(
+                    //   widget: Expanded(
+                    //     child: Container(
+                    //       color: Colors.black.withOpacity(1),
+                    //       child: const Center(
+                    //         child: CircularProgressIndicator(
+                    //           color: Colors.white,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    // );
+                    // Response res = await http.post(
+                    //   Uri.parse('http://192.168.1.16:3000/user/new'),
+                    //   headers: <String, String>{
+                    //     'Content-Type': 'application/json; charset=UTF-8',
+                    //   },
+                    //   body: jsonEncode(<String, String>{
+                    //     'user': user.username,
+                    //   }),
+                    // );
+                    // if (res.statusCode == 200) {
+                    //   // ignore: avoid_print
+                    //   print("user created");
+                    //   // ignore: use_build_context_synchronously
+                    //   context.loaderOverlay.hide();
+                    // // ignore: use_build_context_synchronously
+                    // } else {
+                    //   // ignore: avoid_print
+                    //   print("error");
+                    //   // ignore: use_build_context_synchronously
+                    //   context.loaderOverlay.hide();
+                    // }
+                    Navigator.pushNamed(context, '/logged_in');
                   },
                   otpFieldStyle: OtpFieldStyle(
                     backgroundColor: const Color.fromRGBO(106, 153, 244, 1),

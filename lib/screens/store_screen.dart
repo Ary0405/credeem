@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/exciting_offers.dart';
-import '../widgets/existing_offer.dart';
+import '../widgets/expiring_offer.dart';
 import '../widgets/stores_near_you.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -92,7 +92,7 @@ class StoreScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  'Divyang!',
+                                  'Divyansh!',
                                   style: GoogleFonts.montserrat(
                                     color: Colors.white,
                                     fontSize: 20,
@@ -144,7 +144,7 @@ class StoreScreen extends StatelessWidget {
                 const SizedBox(
                   height: 18,
                 ),
-                const ExistingOffer(),
+                const ExpiringOffer(),
                 const SizedBox(
                   height: 18,
                 ),

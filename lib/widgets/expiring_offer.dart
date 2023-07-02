@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ExistingOffer extends StatelessWidget {
-  const ExistingOffer({super.key});
+class ExpiringOffer extends StatelessWidget {
+  const ExpiringOffer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class ExistingOffer extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'Nike',
+                              '20%',
                               style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -81,7 +81,7 @@ class ExistingOffer extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '7 Perks Available',
+                              '5th July 2023',
                               style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 14,
@@ -126,7 +126,7 @@ class ExistingOffer extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.all(12.0),
                             child: Image.network(
-                              'https://companieslogo.com/img/orig/WMT-0d8ecd74.png?t=1633217525',
+                              'https://companieslogo.com/img/orig/AMZN-e9f942e4.png?t=1632523695',
                             ),
                           ),
                         ),
@@ -138,7 +138,7 @@ class ExistingOffer extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'Nike',
+                              'Buy 1 Get 1',
                               style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -146,7 +146,7 @@ class ExistingOffer extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '7 Perks Available',
+                              '6th July 2023',
                               style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 14,
@@ -191,7 +191,7 @@ class ExistingOffer extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.all(12.0),
                             child: Image.network(
-                              'https://companieslogo.com/img/orig/WMT-0d8ecd74.png?t=1633217525',
+                              'https://companieslogo.com/img/orig/SBUX-0200dcbd.png?t=1633439375',
                             ),
                           ),
                         ),
@@ -203,7 +203,7 @@ class ExistingOffer extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'Nike',
+                              '1 Free Coffee',
                               style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -211,7 +211,7 @@ class ExistingOffer extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '7 Perks Available',
+                              '8th July 2023',
                               style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontSize: 14,
